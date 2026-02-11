@@ -1,0 +1,14 @@
+#include<stdio.h>
+int main(){
+    int n,count=0,i;
+    scanf("%d",&n);
+    for( ;n!=0;n/=10){
+        int rem=n%10;
+      if (rem%2==0){ 
+       count++;}
+       
+    }
+    printf("%d",count);
+    
+    return 0;
+}
