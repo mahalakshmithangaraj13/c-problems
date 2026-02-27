@@ -1,0 +1,26 @@
+#include<stdio.h>
+int main(){
+    int rows,colums;
+    scanf("%d %d",&rows,&colums);
+    int arr[rows][colums];
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<colums;j++){
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    int max=0;
+    int secondmax=0;
+    for(int i=0;i<rows;i++){
+        for(int j=0;j<colums;j++){
+            if(arr[i][j]>max){
+                secondmax=max;
+                max=arr[i][j];
+            }
+            else if (arr[i][j]<max && secondmax<arr[i][j]){
+                secondmax=arr[i][j];
+            }
+        }
+    }
+    printf("%d",secondmax);
+    return 0;
+}
