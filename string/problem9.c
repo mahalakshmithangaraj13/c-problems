@@ -1,30 +1,14 @@
 #include<stdio.h>
+#include<string.h>
 int main(){
-    int rows,colums;
-    scanf("%d %d",&rows,&colums);
-    int arr[rows][colums];
-    for(int i=0;i<rows;i++){
-        for(int j=0;j<colums;j++){
-            scanf("%d",&arr[i][j]);
+    char str[20];
+    fgets(str,sizeof(str),stdin);
+    str[strcspn(str,"\n")]='\0';
+    for(int i=0;str[i]!='\0';i++){
+        if(str[i]>='a' && str[i]<='z'){
+            str[i]=str[i]-32;
         }
     }
-    int evencount,oddcount,count=0,index=0;
-    for(int i=0;i<rows;i++){
-         evencount=0;
-         oddcount=0;
-         for(int j=0;j<colums;j++){
-            if(arr[i][j]%2==0){
-                evencount++;
-            }
-            else{
-                oddcount++;
-            }
-         }
-         if(evencount==oddcount){
-            count++;
-         }
-        
-    }
-     printf("%d",count);
+    printf("%s",str);
     return 0;
 }
