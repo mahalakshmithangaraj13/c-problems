@@ -1,0 +1,11 @@
+#include<stdio.h>
+void simpleint(int p,int r,int t){
+    float interest=(p*r*t)/100;
+    printf("%.2f",interest);
+}
+int main(){
+    int p,r,t;
+    scanf("%d %d %d",&p,&r,&t);
+    simpleint(p,r,t);
+    return 0;
+}
