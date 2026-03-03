@@ -1,21 +1,18 @@
 #include<stdio.h>
-#include<string.h>
 int main(){
-    char str[20];
-    int uppercase=0;
-    fgets(str,sizeof(str),stdin);
-    str[strcspn(str,"\n")]='\0';
-    for(int i=0;str[i]!='\0';i++){
-        if(str[i]>='A' && str[i]<='Z'){
-            uppercase=1;
-            break;
+    int n;
+    scanf("%d",&n);
+    int arr[n];
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    int *p=arr;
+    int max=*p;
+    for(int i=1;i<n;i++){
+        if(*(p+i)>max){
+            max=*(p+i);
         }
     }
-    if(uppercase){
-        printf("Valid password\n");
-    }
-    else{
-        printf("Invalid password");
-    }
+    printf("%d",max);
     return 0;
 }
