@@ -1,12 +1,17 @@
 #include<stdio.h>
 #include<string.h>
 int main(){
-    char str[20];
-    fgets(str,sizeof(str),stdin);
-    str[strcspn(str,"\n")]='\0';
-    int len =strlen(str);
-    for(int i=len-1;i>=0;i--){
-        printf("%c",str[i]);
+    char str1[50],str2[40];
+     fgets(str1,sizeof(str1),stdin);
+     str1[strcspn(str1,"\n")]='\0';
+     char *p=str1;
+    char *q=str2;
+    while(*p!='\0'){
+        *q=*p;
+        p++;
+        q++;
     }
+    *q='\0';
+    printf("%s",str2);
     return 0;
-}
+ }
